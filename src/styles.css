@@ -1,1 +1,600 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.text-align-center {
+    text-align: center;
+}
+h5 {
+    display: block;
+    font-size: 0.83em;
+    margin-block-start: 1.67em;
+    margin-block-end: 1.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+.p-1 {
+    padding: 10px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.align-self-center {
+    align-self: center;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.align-items-end {
+    align-items: flex-end;
+}
+
+.align-items-start {
+    align-items: flex-start;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-start {
+    justify-content: flex-start;
+}
+
+.gap-1 {
+    gap: 6px;
+}
+
+.gap-2 {
+    gap: 12px;
+}
+
+.gap-3 {
+    gap: 24px;
+}
+
+.gap-4 {
+    gap: 42px;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.justify-content-around {
+    justify-content: space-around;
+}
+
+.justify-content-end {
+    justify-content: flex-end !important;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.w-1 {
+    width: 10%;
+}
+
+.w-2 {
+    width: 20%;
+}
+
+.w-3 {
+    width: 30%;
+}
+
+.w-4 {
+    width: 40%;
+}
+
+.w-5 {
+    width: 50%;
+}
+
+.w-6 {
+    width: 60%;
+}
+
+.w-7 {
+    width: 70%;
+}
+
+.w-8 {
+    width: 80%;
+}
+
+.w-9 {
+    width: 90%;
+}
+
+.w-10 {
+    width: 100%;
+}
+
+.h-1 {
+    height: 10%;
+}
+
+.h-2 {
+    height: 20%;
+}
+
+.h-3 {
+    height: 30%;
+}
+
+.h-4 {
+    height: 40%;
+}
+
+.h-5 {
+    height: 50%;
+}
+
+.h-6 {
+    height: 60%;
+}
+
+.h-7 {
+    height: 70%;
+}
+
+.h-8 {
+    height: 80%;
+}
+
+.h-9 {
+    height: 90%;
+}
+
+.h-10 {
+    height: 100%;
+}
+
+.p {
+    padding: 12px;
+}
+
+.me-1 {
+    margin-right: 8px;
+}
+
+.mt-1 {
+    margin-top: 8px;
+}
+
+.mt-2 {
+    margin-top: 16px;
+}
+
+.mb-1 {
+    margin-bottom: 8px;
+}
+
+.ms-1 {
+    margin-left: 8px;
+}
+
+.me-1 {
+    marker-end: 8px;
+}
+
+.h5-btn{
+    cursor: pointer;
+}
+.active-teb {
+    background-color: rgb(36, 120, 109);
+    color: #fff;
+}
+
+.example-card {
+    max-width: 550px;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+}
+
+.home-card {
+    background: linear-gradient(to right bottom, rgb(10, 3, 15), rgb(53, 10, 88), rgba(0, 0, 0, 0.979));
+    color: #fff;
+}
+
+.logo-container {
+    margin-top: 24px;
+}
+
+.main-header {
+    font-size: 36px;
+    line-height: 48px;
+    letter-spacing: 2px;
+    padding: 16px 0;
+}
+
+.footer {
+    padding-top: 10px;
+}
+
+.sign-btn {
+    cursor: pointer;
+    width: 100%;
+    background-color: #fff;
+}
+
+.login-btn {
+    cursor: pointer;
+    text-align: center;
+}
+
+.login-btn span {
+    color: rgb(122, 118, 126);
+}
+
+
+
+.btn-full-green {
+    width: 100%;
+    background-color: rgb(36, 120, 109) !important;
+    color: #fff !important;
+}
+
+.login-card mat-card-header {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.login-card .forgot-btn {
+    text-align: center;
+    color: rgb(36, 120, 109);
+    cursor: pointer;
+}
+
+.signUp-card mat-label {
+    color: rgb(31, 105, 97);
+}
+
+.img-container .profile-img {
+    height: 52px !important;
+    width: 52px !important;
+    position: relative;
+    border-radius: 50%;
+    border: none;
+}
+
+.img-container .profile-img .edit-container {
+    display: none;
+}
+
+.img-container .profile-img img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    border-radius: 50%;
+    object-fit: fill;
+}
+
+.profile-img:hover .edit-container {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.profile-img:hover .edit-container mat-icon {
+    font-size: 24px;
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    opacity: .4;
+}
+
+.main-card {
+    padding: 0px 0px 0px 0px;
+    max-width: 550px;
+    text-align: center;
+    margin: auto;
+}
+
+.main-card mat-card-header {
+    padding: 0px !important;
+}
+
+.main-card mat-card-header mat-toolbar {
+    background: #111 !important;
+    padding: 44px 12px;
+    color: #fff;
+}
+
+
+.main-card mat-card-footer {
+    background-color: #fff;
+    border-top: 1px solid rgb(36, 120, 109);
+    border-radius: 14px;
+}
+
+.main-card mat-card-footer mat-toolbar {
+    color: rgb(36, 120, 109);
+}
+
+.main-card mat-card-footer mat-toolbar div {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.main-card mat-card-footer mat-toolbar p {
+    margin: 0 !important;
+}
+
+.main-card mat-card-content {
+    height: calc(100vh - 64px);
+    overflow: hidden;
+    color: #fff;
+    padding: 0 !important;
+}
+
+.main-card mat-card-content .stories {
+    width: 100%;
+    overflow-x: auto;
+    padding: 12px;
+}
+
+.main-card mat-card-content .stories-box {
+    min-width: 74px;
+    gap: 4px;
+}
+
+.main-card mat-card-content .stories-box-img {
+    border: 3px solid rgba(212, 141, 35, 0.936);
+    border-radius: 50%;
+    height: 62px;
+    width: 62px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-card mat-card-content .stories-box p {
+    margin: 0;
+}
+
+.main-card .inner-card {
+    background: #fff;
+}
+
+.main-card .inner-card mat-list {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+}
+
+.main-card .inner-card mat-list mat-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    height: auto;
+    min-height: 72px;
+}
+
+.main-card .inner-card mat-list mat-list-item .profile-text p-avatar {
+    height: 32px;
+}
+
+.main-card .inner-card mat-list mat-list-item .profile-text p {
+    margin: 0 !important;
+}
+
+.main-card .inner-card mat-list mat-list-item .mess-number .mdc-fab--mini {
+    height: 28px !important;
+    width: 28px !important;
+}
+
+.main-card .inner-card mat-list mat-list-item .mess-number .mat-mdc-mini-fab {
+    box-shadow: none;
+}
+
+.main-card .inner-card mat-list mat-list-item .mess-number p {
+    margin: 0 !important;
+    color: #777;
+}
+
+.video {
+    height: 100%;
+    width: 100%;
+}
+
+.video .click-image-icon mat-icon {
+    color: #777;
+    width: 48px;
+    height: 48px;
+    font-size: 48px;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+}
+
+.chat-card mat-toolbar {
+    display: flex;
+    align-items: center;
+    background-color: transparent !important;
+    padding: 0px !important;
+}
+
+.chat-card mat-card-content {
+    height: calc(100vh - 88px);
+    overflow: auto;
+}
+
+.chat-card mat-card-content mat-list mat-list-item {
+    padding: 0 !important;
+    height: auto !important;
+}
+
+
+.chat-card .start {
+    margin-right: 16px;
+}
+
+.chat-card mat-card-content .start .mdc-list-item__content{
+    display: flex;
+    height: auto;
+    justify-content: flex-start;
+}
+
+.chat-card mat-card-content .start p {
+    white-space: break-spaces;
+    text-align: start;
+    background: rgb(242, 247, 251);
+    color: #111 !important;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+.chat-card .end {
+    margin-left: 16px;
+}
+
+.chat-card .mdc-list-item__content {
+    display: flex;
+    height: auto;
+    justify-content: flex-end;
+}
+
+.chat-card p {
+    white-space: break-spaces;
+    text-align: start;
+    color: #fff !important;
+    background: rgb(32, 160, 144);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+.footer {
+    gap: 4px;
+}
+
+.footer .input-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px;
+    width: 72%;
+    background: rgb(243, 246, 246);
+    border-radius: 8px;
+}
+
+.footer .input-box input {
+    width: 96%;
+    padding: 8px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+.footer .input-box mat-icon {
+    margin-right: 8px;
+    color: rgb(172 172 172);
+}
+
+.search-box {
+    position: relative;
+    width: 100%;
+
+}
+
+.search-box mat-icon {
+    color: #777;
+    top: 28%;
+    left: 6%;
+    font-size: 32px;
+    position: absolute;
+}
+
+.search-box input {
+    width: 92%;
+    padding: 18px 18px 18px 48px;
+    border-radius: 24px;
+}
+
+.divider-white {
+    background-color: #fff;
+    margin-top: 24px !important;
+}
+
+mat-icon {
+    cursor: pointer;
+}
+
+.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+    background-color: inherit !important;
+}
+
+.mat-mdc-snack-bar-container .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled) {
+    color: #fff !important;
+}
+
+.success-snackbar {
+    background-color: rgb(36, 120, 109) !important;
+    ;
+}
+
+.error-snackbar {
+    background-color: red;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    /* Remove scrollbar space */
+    background: transparent;
+    /* Optional: just make scrollbar invisible */
+}
+
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

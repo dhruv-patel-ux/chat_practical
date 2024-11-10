@@ -1,0 +1,120 @@
+<mat-card class="example-card chat-card h-10">
+  <mat-toolbar class="d-flex align-items-center justify-content-between">
+    <div class="d-flex align-items-center justify-content-start">
+      <mat-icon (click)="location.back()" class="me-1"
+        >keyboard_backspace</mat-icon
+      >
+      <div class="img-container me-1">
+        <button
+          class="profile-img"
+          mat-icon-button
+          aria-label="Example icon-button with a menu"
+        >
+          <img [src]="'http://localhost:9999/' + toUser?.avatar" />
+        </button>
+      </div>
+      <h2>{{ toUser?.username }}</h2>
+    </div>
+    <div>
+      <mat-icon class="me-1"> call</mat-icon>
+      <mat-icon>videocam</mat-icon>
+    </div>
+  </mat-toolbar>
+  <mat-card-content class="mt-2 message-container">
+    <mat-list #messageList id="messageList" class="message-list">
+      @for(message of messages;track message?.message;){
+        <mat-list-item
+          role="listitem"
+          [class]="message?.userId == currentUser._id ? 'end' : 'start'"
+          class="messages-container"
+          [id]="message._id"
+        >
+        <div
+          [class]="
+            message?.userId == currentUser._id && message?.replay
+              ? 'replay-box'
+              : ''
+          "
+        >
+          @if(message?.userId == currentUser._id && message?.replay){
+          <span class="replay-message-text">
+            {{ message?.replay }}
+          </span>
+          }
+          <p>
+            {{ message?.message }}
+          </p>
+        </div>
+        <div class="d-flex icon">
+          @if(message?.userId != currentUser._id){
+          <mat-icon
+            class="replay"
+            matTooltip="Add Replay"
+            (click)="addreplayText(message)"
+            >replay</mat-icon
+          >
+          <mat-icon
+            matTooltip="Add Reaction"
+            [class]="
+              message?.userId == currentUser._id ? 'icon-end' : 'icon-start'
+            "
+            [matMenuTriggerFor]="menu"
+            aria-label="Example icon-button with a menu"
+            >face</mat-icon
+          >
+          <mat-menu #menu="matMenu">
+            <div class="d-flex gap-1">
+              @for(emoji of availableReactions;track $index;){
+              <span class="emoji" (click)="addReact($index, message)">{{
+                emoji
+              }}</span>
+              }
+            </div>
+          </mat-menu>
+          }
+          <span
+            [class]="
+              message?.userId == currentUser._id ? 'emoji-end' : 'emoji-start'
+            "
+          >
+            {{ availableReactions[message?.reaction] }}
+          </span>
+        </div>
+      </mat-list-item>
+      }
+    </mat-list>
+  </mat-card-content>
+  <mat-toolbar class="footer d-flex align-items-center justify-content-between">
+    <mat-icon> insert_link</mat-icon>
+    <div class="input-box" [class]="replayText ? 'p-12' : ''">
+      @if(replayText){
+      <div class="replay-text">
+        <span>{{ replayText }} </span>
+        <mat-icon (click)="closeReplay()">close</mat-icon>
+      </div>
+      }
+      <input
+        type="text"
+        [(ngModel)]="inputValue"
+        placeholder="Enter your message"
+      />
+    </div>
+    @if(inputValue.length > 0){
+    <div class="d-flex justify-content-center align-items-center">
+      <button
+        (click)="sendMessage()"
+        mat-icon-button
+        color="primary"
+        aria-label="Example icon button with a filter list icon"
+      >
+        <mat-icon>send</mat-icon>
+      </button>
+    </div>
+    } @if(inputValue.length < 1){
+    <div class="d-flex justify-content-center align-items-center">
+      <mat-icon>photo_camera</mat-icon>
+      <mat-icon>keyboard_voice</mat-icon>
+    </div>
+    }
+  </mat-toolbar>
+</mat-card>

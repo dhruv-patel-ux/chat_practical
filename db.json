@@ -1,0 +1,22 @@
+{
+    "Users": [
+        {
+            "id": "1",
+            "name": "dhruv"
+        },
+        {
+            "id": "2",
+            "name": "evital"
+        }
+    ],
+    "messages": [
+        {
+            "RoomId": 1,
+            "body": "some comment",
+            "usersId": [
+                1,
+                2
+            ]
+        }
+    ]
+}

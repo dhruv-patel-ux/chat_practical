@@ -1,0 +1,29 @@
+<mat-card class="inner-card">
+    <mat-list role="list">
+      @for(user of apiService.friendList();track user?._id){
+      <mat-list-item role="listitem" (click)="goToRoom(user?.ToUserProfile[0]?._id,user?.roomId)">
+        <div class="d-flex align-items-end justify-content-between">
+          <div class="profile-text d-flex align-items-end justify-content-start gap-2">
+            <div class="img-container">
+              <button class="profile-img" mat-icon-button aria-label="Example icon-button with a menu">
+                <img
+                  [src]=" user?.ToUserProfile[0]?.avatar ?'http://localhost:9999/'+user?.ToUserProfile[0]?.avatar : '../../assets/avatars/pngwing.com.png'"
+                  alt="">
+              </button>
+            </div>
+            <div class="d-flex justify-content-start align-items-start flex-column">
+              <h3 style="margin: 0;">{{user?.ToUserProfile[0]?.username}}</h3>
+              <p>{{user?.lastMessage | titlecase}}</p>
+            </div>
+          </div>
+          <div class="mess-number">
+            <p>2 min ago</p>
+            <button mat-mini-fab color="warn" aria-label="Example icon button with a home icon">
+              3
+            </button>
+          </div>
+        </div>
+      </mat-list-item>
+      }
+    </mat-list>
+  </mat-card>

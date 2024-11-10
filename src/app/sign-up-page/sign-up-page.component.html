@@ -1,0 +1,55 @@
+<mat-card class="example-card signUp-card h-10">
+    <mat-card-header class="justify-content-center align-items-center text-align-center">
+        <mat-card-title>Sign up with Email</mat-card-title>
+        <mat-card-subtitle>Get chatting with friends and family today by signing up for our chat
+            app!</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <form class="example-form" [formGroup]="signUpForm">
+            <mat-form-field class="example-full-width w-10">
+                <mat-label>User Name</mat-label>
+                <input matInput formControlName="username" placeholder="Enter Your User Name">
+                @if (form['username'].hasError('required')) {
+                <mat-error>User Name is <strong>required</strong></mat-error>
+                }
+            </mat-form-field>
+            <mat-form-field class="example-full-width w-10">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" type="email" placeholder="Enter Your Email">
+                @if (form['email'].hasError('email') && !form['email'].hasError('required')) {
+                <mat-error>Please enter a valid email address</mat-error>
+                }
+                @if (form['email'].hasError('required')) {
+                <mat-error>Email is <strong>required</strong></mat-error>
+                }
+            </mat-form-field>
+            <mat-form-field class="example-full-width w-10">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" type="password" placeholder="Enter Your Password"
+                    maxlength="6">
+                <mat-hint align="end">{{form['password'].value.length}}/6</mat-hint>
+                @if (form['password'].hasError('required')) {
+                <mat-error>Password is <strong>required</strong></mat-error>
+                }
+            </mat-form-field>
+            <mat-form-field class="example-full-width w-10">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput formControlName="confirmPassword" type="password" maxlength="6"
+                    placeholder="Enter Your Password" [errorStateMatcher]="matcher">
+                <mat-hint align="end">{{form['confirmPassword'].value.length}}/6</mat-hint>
+                @if (form['confirmPassword'].hasError('required')) {
+                <mat-error>Confirm Password is <strong>required</strong></mat-error>
+                }
+                @if(signUpForm.hasError('mismatch') || submit){
+                <mat-error>
+                    Passwords do not match.
+                </mat-error>
+                }
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-footer>
+        <button mat-stroked-button class="btn-full-green" (click)="signUp()">Create An Account</button>
+        <h5 class="h5-btn" routerLink="/login">Login With Existing Account</h5>
+    </mat-card-footer>
+</mat-card>

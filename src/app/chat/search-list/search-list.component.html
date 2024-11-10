@@ -1,0 +1,29 @@
+<mat-card>
+    <mat-card-header>
+        <div class="search-box">
+            <mat-icon>search</mat-icon>
+            <input matInput placeholder="Ex. Pizza" [formControl]="searchInput">
+        </div>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-list style="margin-top: 24px;">
+            @for(user of users;track user.id){
+            <mat-list-item style="min-height: 74px;" (click)="goToRoom(user._id)">
+                <div class="d-flex align-items-end justify-content-between" style="height: 100%;">
+                    <div class="profile-text d-flex align-items-end justify-content-start gap-3">
+                        <div class="img-container">
+                            <button class="profile-img" mat-icon-button aria-label="Example icon-button with a menu" style="height: 68px !important; width: 68px !important;">
+                                <img [src]=" user?.avatar ?'http://localhost:9999/'+user?.avatar : '../../assets/avatars/pngwing.com.png'"
+                                    alt="">
+                            </button>
+                        </div>
+                        <div class="d-flex justify-content-start align-items-center flex-column">
+                            <h3 style="margin: 0;">{{user?.username}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </mat-list-item>
+            }
+        </mat-list>
+    </mat-card-content>
+</mat-card>

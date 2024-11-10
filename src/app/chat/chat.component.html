@@ -1,0 +1,82 @@
+<mat-card class="main-card h-10">
+  <mat-card-header>
+    <mat-toolbar class="d-flex justify-content-between align-items-center">
+      <h2>Simple Chat</h2>
+      <div class="img-container">
+        <button
+          class="profile-img"
+          mat-icon-button
+          [matMenuTriggerFor]="menu"
+          aria-label="Example icon-button with a menu"
+        >
+          <img src="/pngwing.com.png" height="48px" width="48px" />
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <span>New Group</span>
+          </button>
+          <button mat-menu-item>
+            <span>New Broadcast</span>
+          </button>
+          <button mat-menu-item routerLink="/profile">
+            <span>Profile</span>
+          </button>
+          <button mat-menu-item (click)="logout()">
+            <span>Logout</span>
+          </button>
+        </mat-menu>
+      </div>
+    </mat-toolbar>
+  </mat-card-header>
+  <mat-card-content class="mt-2">
+   <router-outlet></router-outlet>
+  </mat-card-content>
+  <mat-card-footer>
+    <mat-toolbar
+      style="min-height: 78px; border-radius: 28px"
+      class="justify-content-between"
+    >
+      <div
+        routerLink="./message-list"
+        routerLinkActive="active-teb"
+        class="d-flex align-items-center flex-column"
+      >
+        <mat-icon> chat_bubble_outline</mat-icon>
+        <p>Messages</p>
+      </div>
+      <div
+        routerLink="./search"
+        routerLinkActive="active-teb"
+        class="d-flex align-items-center flex-column justify-content-end"
+      >
+        <mat-icon>search</mat-icon>
+        <p>Search</p>
+      </div>
+      <div
+        routerLink="./contect-list"
+        routerLinkActive="active-teb"
+        class="d-flex align-items-center flex-column justify-content-end"
+      >
+        <mat-icon>account_circle</mat-icon>
+        <p>Contects</p>
+      </div>
+      <div
+        routerLink="./setting"
+        routerLinkActive="active-teb"
+        class="d-flex align-items-center flex-column justify-content-end"
+      >
+        <mat-icon>settings</mat-icon>
+        <p>Settings</p>
+      </div>
+    </mat-toolbar>
+  </mat-card-footer>
+@if(chatService.isCall()){
+<div class="model">
+  <h2 mat-dialog-title>Delete file</h2>
+  <mat-dialog-content> Would you like to delete cat.jpeg? </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close>No</button>
+    <button mat-button mat-dialog-close cdkFocusInitial>Ok</button>
+  </mat-dialog-actions>
+</div>
+}
